@@ -1,6 +1,6 @@
 {
     "manifest_version": 2,
-    "name": "Hide My Tabs",
+    "name": "HideMyTabs",
     "version": "1.0",
     "description": "Firefox extension that helps you keep your browser tidy by letting you hide, unhide, or remove tabs whenever you need a little less clutter.",
     "permissions": ["tabs", "storage", "contextMenus"],
