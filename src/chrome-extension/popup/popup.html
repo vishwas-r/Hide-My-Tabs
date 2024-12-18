@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HideMyTabs</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: #f9f9f9;
+      color: #333;
+      min-width: 500px;
+    }
+    
+    h1 {
+      font-size: 1.8em;
+      margin-bottom: 5px;
+      color: white;
+    }
+    
+    #header {
+      background-color: #41b9fe;
+      color: white;
+      padding: 15px 20px;
+      text-align: center;
+      border-bottom: 2px solid #333;
+    }
+    
+    #header p {
+      font-size: 1em;
+      margin-top: 5px;
+    }
+    
+    #content {
+      padding: 20px;
+    }
+    
+    .section {
+      margin-bottom: 20px;
+    }
+    
+    label {
+      font-size: 1em;
+      padding: 5px;
+      display: inline-block;
+    }
+    
+    input[type="text"] {
+      width: calc(100% - 20px);
+      padding: 10px;
+      font-size: 1em;
+      margin-right: 10px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+    }
+    
+    button {
+      padding: 10px 15px;
+      font-size: 1em;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+    }
+    
+    #saveUrlBtn {
+      background-color: #4CAF50;
+      color: white;
+      margin-top: 10px;
+      display:block;
+      margin-right: 8px;
+      margin-left:auto;
+    }
+    
+    #hideAllTabsBtn {
+      background-color: #007BFF;
+      color: white;
+      width: 49%;
+      display:inline-block;
+    }
+    
+    #unhideAllTabsBtn {
+      background-color: #FFC107;
+      color: white;
+      width: 49%;
+      display:inline-block;
+      margin-top: 10px;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    
+    table, th, td {
+      border: 1px solid #ddd;
+    }
+    
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+    
+    th {
+      background-color: #f2f2f2;
+    }
+    
+    td button {
+      padding: 5px 10px;
+      font-size: 1em;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-left: 10px;
+    }
+    
+    td button.unhide {
+      background-color: #28a745;
+      color: white;
+    }
+    
+    td button.unhide:hover {
+      background-color: #218838;
+    }
+    
+    td button.remove {
+      background-color: #dc3545;
+      color: white;
+    }
+    
+    td button.remove:hover {
+      background-color: #c82333;
+    }
+    
+    td button:not(.unhide) {
+      margin-left: 10px;
+    }
+    
+    #footer {
+      text-align: center;
+      background-color: #f1f1f1;
+      padding: 10px;
+      border-top: 2px solid #ddd;
+    }
+    
+    #footer p {
+      font-size: 0.9em;
+      color: #555;
+    }
+    .heart {
+      color: red;
+    }
+   </style>
+</head>
+<body>
+  <div id="header">
+    <h1><img class="icon" src="/icons/icon-24.png" style="background-color: white; border-radius: 50%; border: 1px solid white"> Hide My Tabs</h1>
+    <p>Manage your hidden tabs</p>
+  </div>
+
+  <div id="content">
+    <div class="section">
+      <label for="customUrl">URL:&nbsp (opened when 'Hide All Tabs' is clicked)</label>
+      <input type="text" id="customUrl" placeholder="https://google.com">
+      <button id="saveUrlBtn">Save URL</button>
+    </div>
+
+    <div class="section" style="margin-top: 20px">
+      <button id="hideAllTabsBtn">Hide All Tabs</button>
+      <button id="unhideAllTabsBtn">Reopen All Tabs</button>
+    </div>
+
+    <div class="section">
+      <table id="hiddenTabsList">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Hidden tabs will be listed here dynamically -->
+        </tbody>
+      </table>
+
+      <p id="noTabsMessage" style="display: none;">No Hidden Tabs</p>
+    </div>
+
+  </div>
+
+  <div id="footer">
+    <p>Built with <span class="heart">&#10084;</span> | <a href="https://vishwas.me" target="_blank">Vishwas</a></p>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
